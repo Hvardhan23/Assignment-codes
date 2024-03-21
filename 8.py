@@ -18,7 +18,6 @@ def highlight_defects(image_path):
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
-# Example usage
 highlight_defects('Base Image.png')
 highlight_defects('Small Defect.png')
 highlight_defects('Large Defect.png')
