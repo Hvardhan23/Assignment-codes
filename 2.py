@@ -29,18 +29,16 @@ class NodeOperation:
 		return len
 
 	def printMiddle(self, head):
-		if head is not None:
+		if head is not None: #considering 3 pointers
 			slow_ptr = head
 			fast_ptr = head
-			prev_to_slow = None  # This variable will keep track of the previous node to slow_ptr
+			prev_to_slow = None  
 			while fast_ptr is not None and fast_ptr.next is not None:
-				prev_to_slow = slow_ptr  # Update prev_to_slow before moving slow_ptr and fast_ptr
-				slow_ptr = slow_ptr.next
-				fast_ptr = fast_ptr.next.next
+				prev_to_slow = slow_ptr  # one moves along with slow but a step back
+				slow_ptr = slow_ptr.next # one moves one element forward for every loop
+				fast_ptr = fast_ptr.next.next # one moves two elemts forward for every loop
 			print('The middle element(s) is/are: ', slow_ptr.data)
 			if fast_ptr is None:
-            # If fast_ptr is None, the length of the list is even,
-            # so we print the previous element of slow_ptr
 				print('The other middle element(s) is/are: ', prev_to_slow.data)
 
 head = None
